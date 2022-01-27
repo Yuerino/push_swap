@@ -12,7 +12,7 @@ LFLAGS	= -L${LIBFT_DIR} -lft
 IDIR	= .
 IFLAGS	= -I${IDIR} -I${LIBFT_DIR}
 
-SRCS	= main.c operations.c utils.c parser.c
+SRCS	= main.c operations.c utils.c parser.c sort.c
 
 RM		= rm -f
 

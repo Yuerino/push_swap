@@ -6,13 +6,13 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 15:57:54 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/01/27 16:37:59 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/01/27 22:18:44 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_swap(t_list *stack_a, t_list *stack_b)
+void	stack_swap(t_list *stack_a, t_list *stack_b, char *operation)
 {
 	t_list	*second;
 
@@ -26,19 +26,21 @@ void	stack_swap(t_list *stack_a, t_list *stack_b)
 		second = stack_b->next;
 		ft_lstswap_content(stack_b, second);
 	}
+	ft_putendl_fd(operation, STDOUT_FILENO);
 }
 
-void	stack_push(t_list **stack_first, t_list **stack_second)
+void	stack_push(t_list **stack_a, t_list **stack_b, char *operation)
 {
 	t_list	*tmp;
 
-	tmp = (*stack_first)->next;
-	(*stack_first)->next = *stack_second;
-	*stack_second = *stack_first;
-	*stack_first = tmp;
+	tmp = (*stack_a)->next;
+	(*stack_a)->next = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = tmp;
+	ft_putendl_fd(operation, STDOUT_FILENO);
 }
 
-void	stack_rotate(t_list **stack_a, t_list **stack_b)
+void	stack_rotate(t_list **stack_a, t_list **stack_b, char *operation)
 {
 	t_list	*tmp;
 
@@ -56,9 +58,10 @@ void	stack_rotate(t_list **stack_a, t_list **stack_b)
 		tmp->next = NULL;
 		ft_lstadd_back(stack_b, tmp);
 	}
+	ft_putendl_fd(operation, STDOUT_FILENO);
 }
 
-void	stack_rrotate(t_list **stack_a, t_list **stack_b)
+void	stack_rrotate(t_list **stack_a, t_list **stack_b, char *operation)
 {
 	t_list	*tmp;
 
@@ -74,4 +77,5 @@ void	stack_rrotate(t_list **stack_a, t_list **stack_b)
 		ft_lstsecondlast(*stack_b)->next = NULL;
 		ft_lstadd_front(stack_a, tmp);
 	}
+	ft_putendl_fd(operation, STDOUT_FILENO);
 }

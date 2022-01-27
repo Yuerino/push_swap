@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 19:01:30 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/01/26 21:47:58 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/01/27 16:15:47 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int		ft_abs(int n);
 void	ft_swap_int(int *a, int *b);
+int		ft_isspace(int c);
 
 // get_next_line
 

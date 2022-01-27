@@ -22,7 +22,7 @@ BSRCS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstmap.c
 BOBJS	= ${BSRCS:.c=.o}
 
-ESRCS	= get_next_line.c ft_abs.c ft_swap_int.c
+ESRCS	= get_next_line.c ft_abs.c ft_swap_int.c ft_isspace.c
 EOBJS	= ${ESRCS:.c=.o}
 
 AR		= ar rcs

@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:01:05 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/01/27 22:38:45 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/01/28 10:25:12 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,7 @@ typedef struct s_pushswap
 
 void	read_stack(t_pushswap *data, int argc, char **argv);
 void	stack_sort(t_pushswap *data);
-
-void	stack_swap(t_list *stack_a, t_list *stack_b, char *operation);
-void	stack_push(t_list **stack_a, t_list **stack_b, char *operation);
-void	stack_rotate(t_list **stack_a, t_list **stack_b, char *operation);
-void	stack_rrotate(t_list **stack_a, t_list **stack_b, char *operation);
+void	stack_operation(t_pushswap *data, char *operation);
 
 t_list	*ft_lstsecondlast(t_list *lst);
 void	ft_lstswap_content(t_list *a, t_list *b);

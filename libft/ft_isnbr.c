@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 15:55:51 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:16:16 by cthien-h         ###   ########.fr       */
+/*   Created: 2022/02/04 13:42:09 by cthien-h          #+#    #+#             */
+/*   Updated: 2022/02/04 13:45:01 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_lstswap_content(t_list *a, t_list *b)
+int	ft_isnbr(char *nptr)
 {
-	void	*content;
-
-	content = a->content;
-	a->content = b->content;
-	b->content = content;
-}
-
-t_list	*ft_lstsecondlast(t_list *lst)
-{
-	while (lst && lst->next && !lst->next->next)
+	if (*nptr == '+' || *nptr == '-')
+		nptr++;
+	if (!*nptr)
+		return (0);
+	while (*nptr)
 	{
-		lst = lst->next;
+		if (!ft_isdigit(*nptr))
+			return (0);
+		nptr++;
 	}
-	return (lst);
-}
-
-void	exit_error(char *err)
-{
-	ft_putendl_fd(err, 2);
-	exit(EXIT_FAILURE);
+	return (1);
 }

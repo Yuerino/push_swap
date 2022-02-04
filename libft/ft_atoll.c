@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 15:55:51 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:16:16 by cthien-h         ###   ########.fr       */
+/*   Created: 2022/02/04 13:37:31 by cthien-h          #+#    #+#             */
+/*   Updated: 2022/02/04 13:38:51 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_lstswap_content(t_list *a, t_list *b)
+long long	ft_atoll(const char *nptr)
 {
-	void	*content;
+	long long	result;
+	int			sign;
 
-	content = a->content;
-	a->content = b->content;
-	b->content = content;
-}
-
-t_list	*ft_lstsecondlast(t_list *lst)
-{
-	while (lst && lst->next && !lst->next->next)
+	sign = 1;
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		lst = lst->next;
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
-	return (lst);
-}
-
-void	exit_error(char *err)
-{
-	ft_putendl_fd(err, 2);
-	exit(EXIT_FAILURE);
+	result = 0;
+	while (ft_isdigit(*nptr))
+	{
+		result = (result * 10) + (*nptr - 48);
+		nptr++;
+	}
+	return (sign * result);
 }

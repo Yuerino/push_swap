@@ -6,11 +6,12 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 15:57:54 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/01/28 11:24:21 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:49:51 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	stack_swap(t_list *stack)
 {
@@ -73,7 +74,7 @@ void	stack_operation(t_pushswap *data, char *operation)
 		stack_swap(data->stack_b);
 	if (!ft_strncmp(operation, OP_PA, ft_strlen(OP_PA)))
 		stack_push(&data->stack_b, &data->stack_a);
-	else if (ft_strncmp(operation, OP_PB, ft_strlen(OP_PB)))
+	else if (!ft_strncmp(operation, OP_PB, ft_strlen(OP_PB)))
 		stack_push(&data->stack_a, &data->stack_b);
 	if (!ft_strncmp(operation, OP_RA, ft_strlen(OP_RA))
 		|| !ft_strncmp(operation, OP_RR, ft_strlen(OP_RR)))

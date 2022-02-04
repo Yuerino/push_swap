@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:01:05 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/01/28 10:25:12 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:29:02 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@
 # define OP_RRA "rra"
 # define OP_RRB "rrb"
 # define OP_RRR "rrr"
+
+typedef struct s_nbr
+{
+	int	nbr;
+	int	idx;
+}	t_nbr;
 
 typedef struct s_pushswap
 {

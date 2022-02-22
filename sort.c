@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 22:20:03 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:57:55 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:37:43 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static void	radix_binary_sort(t_pushswap *data)
 	}
 }
 
+// TODO: add small sort base on length
 void	stack_sort(t_pushswap *data)
 {
 	print_stack(data->stack_a);

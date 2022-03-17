@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:01:05 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/03/17 08:26:28 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/03/17 08:45:11 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@
 
 // Limit marcos
 
-# define INT32_MAX 2147483647
-# define INT32_MIN -2147483648
+# ifndef INT32_MAX
+#  define INT32_MAX 2147483647
+# endif
+# ifndef INT32_MIN
+#  define INT32_MIN -2147483648
+# endif
 
 // Operations macros
 

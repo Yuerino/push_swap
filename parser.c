@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:05:32 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/03/17 07:06:21 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/03/17 09:01:55 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	index_stack(t_pushswap *data)
 		lst = data->stack_a;
 		while (lst)
 		{
-			if (min > ((t_nbr *)lst->content)->nbr
+			if (min >= ((t_nbr *)lst->content)->nbr
 				&& ((t_nbr *)lst->content)->idx < 0)
 			{
 				min = ((t_nbr *)lst->content)->nbr;

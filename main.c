@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:03:21 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:45:13 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/03/17 08:07:19 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,17 @@ int	main(int argc, char **argv)
 {
 	t_pushswap	data;
 
-	if (argc < 3)
-		exit_error("Enter at least 2 numbers");
+	if (argc <= 2)
+		return (EXIT_SUCCESS);
 	data.stack_a = NULL;
 	data.stack_b = NULL;
 	read_stack(&data, argc, argv);
-	stack_sort(&data);
+	if (is_sorted(data.stack_a))
+		return (EXIT_SUCCESS);
+	if (data.length <= 5)
+		small_sort(&data);
+	else
+		radix_binary_sort(&data);
+	free_stack(&data);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 22:01:05 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:29:02 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/03/17 08:26:28 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <stdlib.h>
 
 # include "libft.h"
+
+// Limit marcos
+
+# define INT32_MAX 2147483647
+# define INT32_MIN -2147483648
 
 // Operations macros
 
@@ -45,11 +50,15 @@ typedef struct s_pushswap
 }	t_pushswap;
 
 void	read_stack(t_pushswap *data, int argc, char **argv);
-void	stack_sort(t_pushswap *data);
-void	stack_operation(t_pushswap *data, char *operation);
+void	stack_operation(t_pushswap *data, char *operation, int print_operation);
 
-t_list	*ft_lstsecondlast(t_list *lst);
+void	radix_binary_sort(t_pushswap *data);
+void	small_sort(t_pushswap *data);
+
+int		is_sorted(t_list *lst);
+void	free_stack(t_pushswap *data);
 void	ft_lstswap_content(t_list *a, t_list *b);
 void	exit_error(char *err);
+int		get_smallest_num_idx(t_pushswap *data);
 
 #endif

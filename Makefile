@@ -1,6 +1,7 @@
 SHELL	= /bin/sh
 
 NAME	= push_swap
+CHECKER	= checker
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
@@ -12,26 +13,28 @@ LFLAGS	= -L${LIBFT_DIR} -lft
 IDIR	= .
 IFLAGS	= -I${IDIR} -I${LIBFT_DIR}
 
-SRCS	= main.c operations.c utils.c parser.c sort.c
+SRCS	= operations.c utils.c parser.c sort.c
+MSRCS	= main.c
+BSRCS	= checker.c
 
 RM		= rm -f
 
-.PHONY: all clean fclean re bonus debug
+.PHONY: all clean fclean re bonus ${CHECKER}
 
-${NAME}: ${SRCS}
+${NAME}: ${MSRCS} ${SRCS}
 		@make extra -C ${LIBFT_DIR}
-		${CC} ${CFLAGS} ${SRCS} ${IFLAGS} ${LFLAGS} -o ${NAME}
+		${CC} ${CFLAGS} ${MSRCS} ${SRCS} ${IFLAGS} ${LFLAGS} -o ${NAME}
 
-debug: ${SRSC}
+${CHECKER}: ${SRCS} ${BSRCS}
 		@make extra -C ${LIBFT_DIR}
-		${CC} -g ${CFLAGS} ${SRCS} ${IFLAGS} ${LFLAGS} -o ${NAME}-debug
+		${CC} ${CFLAGS} ${BSRCS} ${SRCS} ${IFLAGS} ${LFLAGS} -o ${CHECKER}
 
 all: ${NAME}
 
-bonus: all
+bonus: all ${CHECKER}
 
 clean:
-		@${RM} ${NAME} ${NAME}-debug
+		@${RM} ${NAME} ${CHECKER}
 		@make clean -C ${LIBFT_DIR}
 
 fclean: clean

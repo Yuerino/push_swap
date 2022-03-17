@@ -6,7 +6,7 @@
 /*   By: cthien-h <cthien-h@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:05:32 by cthien-h          #+#    #+#             */
-/*   Updated: 2022/02/04 14:29:55 by cthien-h         ###   ########.fr       */
+/*   Updated: 2022/03/17 07:06:21 by cthien-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ static int	is_dup(t_list *lst, int nbr)
 	return (0);
 }
 
-// O(n^2) indexing holy shit save me
-// whatever man
 static void	index_stack(t_pushswap *data)
 {
 	int		i;
@@ -64,15 +62,15 @@ void	read_stack(t_pushswap *data, int argc, char **argv)
 	while (i < argc)
 	{
 		if (!ft_isnbr(argv[i]))
-			exit_error("Invalid number");
+			exit_error("Error");
 		tmp = ft_atoll(argv[i]);
 		if (tmp > INT32_MAX || tmp < INT32_MIN)
-			exit_error("Invalid number");
+			exit_error("Error");
 		if (is_dup(data->stack_a, tmp))
-			exit_error("Duplicated number");
+			exit_error("Error");
 		nbr = ft_calloc(1, sizeof(t_nbr));
 		if (!nbr)
-			exit_error("Malloc failed");
+			exit_error("Error");
 		nbr->nbr = tmp;
 		nbr->idx = -1;
 		ft_lstadd_back(&data->stack_a, ft_lstnew(nbr));
